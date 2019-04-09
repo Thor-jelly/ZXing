@@ -1,3 +1,11 @@
+# 权限
+
+```
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+```
+
 # ViewfinderView属性说明
 
 | 属性             | 值类型    | 默认值    | 说明                                      |
