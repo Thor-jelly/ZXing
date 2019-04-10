@@ -735,7 +735,7 @@ public abstract class CaptureActivity extends Activity implements SurfaceHolder.
 //        }
 //    }
 
-    private void initCamera(SurfaceHolder surfaceHolder) {
+    protected void initCamera(SurfaceHolder surfaceHolder) {
         if (surfaceHolder == null) {
             throw new IllegalStateException("No SurfaceHolder provided");
         }
