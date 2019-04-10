@@ -6,6 +6,32 @@
     <uses-permission android:name="android.permission.FLASHLIGHT"/>
 ```
 
+# 动态权限申请
+
+可以在自定义Activity中，重写initCamera方法，也可以在进入自定义Activity之前申请。
+
+```
+@Override
+    protected void initCamera(SurfaceHolder surfaceHolder) {
+        //请求权限
+        Disposable subscribe = new RxPermissions(this)
+                .request(Manifest.permission.CAMERA)
+                .subscribe(new Consumer<Boolean>() {
+                    @Override
+                    public void accept(Boolean granted) throws Exception {
+                        if (granted) {
+                            ScanCodeActivity.super.initCamera(surfaceHolder);
+                        } else {
+                            ToastUtils.showToast("请允许拍照权限后，再试！");
+                            finish();
+                        }
+                    }
+                });
+
+        mDisposable.add(subscribe);
+    }
+```
+
 # ViewfinderView属性说明
 
 | 属性             | 值类型    | 默认值    | 说明                                      |
