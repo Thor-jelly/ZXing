@@ -16,7 +16,6 @@
 
 package com.jelly.thor.zxing;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -42,6 +41,7 @@ import java.util.EnumSet;
 import java.util.Map;
 
 import androidx.annotation.LayoutRes;
+import androidx.appcompat.app.AppCompatActivity;
 
 
 /**
@@ -52,7 +52,7 @@ import androidx.annotation.LayoutRes;
  * @author dswitkin@google.com (Daniel Switkin)
  * @author Sean Owen
  */
-public abstract class CaptureActivity extends Activity implements SurfaceHolder.Callback {
+public abstract class CaptureActivity extends AppCompatActivity implements SurfaceHolder.Callback {
 
     private static final String TAG = CaptureActivity.class.getSimpleName();
 
