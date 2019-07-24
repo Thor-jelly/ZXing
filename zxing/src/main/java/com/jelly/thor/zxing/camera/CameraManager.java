@@ -346,6 +346,7 @@ public final class CameraManager {
 //        int top = (height-size)/2;
 //        return new PlanarYUVLuminanceSource(data, width, height, left, top,
 //                left + size, top + size, false);
+
         return new PlanarYUVLuminanceSource(data, width, height, 0, 0,
                 width, height, false);
     }
